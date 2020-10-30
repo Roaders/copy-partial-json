@@ -1,5 +1,1 @@
-{
-    "name": "exampleTarget",
-    "version": "0",
-    "description": "when npm version is run the version of this file is automatically updated"
-}
+{"name":"exampleTarget","version":"1.0.1","description":"when npm version is run the version of this file is automatically updated"}

@@ -14,10 +14,11 @@
 
 ## Options
 
-| Argument | Type |
-|-|-|
-| **sourceFile** | string |
-| **targetFile** | string |
-| **keys** | string[] |
+| Argument | Alias | Type |
+|-|-|-|
+| **sourceFile** | | string |
+| **targetFile** | | string |
+| **keys** | | string[] |
+| **help** | **h** | boolean |
 
 [//]: ####ts-command-line-args_write-markdown_replaceAbove  

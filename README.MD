@@ -10,15 +10,31 @@
 
 ## WORK IN PROGRESS
 
+To copy the version, name and dependency list from a root package.json to child packages:
+
+```bash
+$ copy-partial-json -s package.json -t childOne/package.json -t childTwo/package.json -k version,name,dependencies
+```
+
+Using npm scripts this can be done automatically when `npm version` is run:
+
+```json
+{
+    "scripts": {
+        "version": "copy-partial-json -s package.json -t childOne/package.json -t childTwo/package.json -k version,name,dependencies"
+    }
+}
+```
+
 [//]: ####ts-command-line-args_write-markdown_replaceBelow  
 
 ## Options
 
-| Argument | Alias | Type |
-|-|-|-|
-| **sourceFile** | | string |
-| **targetFile** | | string |
-| **keys** | | string[] |
-| **help** | **h** | boolean |
+| Argument | Alias | Type | Description |
+|-|-|-|-|
+| **sourceFile** | **s** | string | The json file to copy from |
+| **targetFile** | **t** | string[] | The json file to copy to |
+| **keys** | **k** | string[] | The keys to copy. For example, 'version,name,dependencies' |
+| **help** | **h** | boolean | Show this help text |
 
 [//]: ####ts-command-line-args_write-markdown_replaceAbove  

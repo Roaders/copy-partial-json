@@ -1,0 +1,4 @@
+{
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "window.title": "copy-partial-json ${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}"
+}

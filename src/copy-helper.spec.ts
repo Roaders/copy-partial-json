@@ -49,7 +49,7 @@ describe('copy.helper', () => {
     let mockFs: IMocked<typeof fsImport>;
 
     it(`should copy values from one json file to another`, () => {
-        copyPartial('sourceFile.json', ['targetFile.json'], ['version', 'name', 'dependencies']);
+        copyPartial('sourceFile.json', ['targetFile.json'], ['version', 'name', 'dependencies'], 4);
 
         const expectedFile = {
             version: '1.2.3',
@@ -62,7 +62,7 @@ describe('copy.helper', () => {
             },
             name: 'sample-source',
         };
-        const expectedString = JSON.stringify(expectedFile);
+        const expectedString = JSON.stringify(expectedFile, undefined, 4);
 
         expect(mockFs.withFunction('readFileSync').withParameters('sourceFile.json')).wasCalledOnce();
         expect(mockFs.withFunction('readFileSync').withParameters('targetFile.json')).wasCalledOnce();
@@ -79,6 +79,7 @@ describe('copy.helper', () => {
             'sourceFile.json',
             ['targetFile.json', 'targetTwo.json', 'targetThree.json'],
             ['version', 'name', 'dependencies'],
+            4,
         );
 
         expect(mockFs.withFunction('readFileSync').withParameters('sourceFile.json')).wasCalledOnce();
@@ -92,9 +93,9 @@ describe('copy.helper', () => {
     });
 
     it(`should create a new file when when doesn't already exist`, () => {
-        copyPartial('sourceFile.json', ['newFile.json'], ['version', 'name', 'dependencies']);
+        copyPartial('sourceFile.json', ['newFile.json'], ['version', 'name', 'dependencies'], 2);
 
-        const expectedString = JSON.stringify(fileLookup['sourceFile.json']);
+        const expectedString = JSON.stringify(fileLookup['sourceFile.json'], undefined, 2);
 
         expect(mockFs.withFunction('readFileSync').withParameters('sourceFile.json')).wasCalledOnce();
         expect(mockFs.withFunction('readFileSync').withParameters('newFile.json')).wasCalledOnce();

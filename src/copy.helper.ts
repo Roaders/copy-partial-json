@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs';
 
-export function copyPartial(sourcePath: string, targetPaths: string[], keys: string[]): void {
+export function copyPartial(sourcePath: string, targetPaths: string[], keys: string[], jsonIndent: number): void {
     const source = loadJson(sourcePath, true);
 
     targetPaths.forEach((path) => {
@@ -10,7 +10,7 @@ export function copyPartial(sourcePath: string, targetPaths: string[], keys: str
             targetFile[key] = source[key];
         });
 
-        writeFileSync(path, JSON.stringify(targetFile));
+        writeFileSync(path, JSON.stringify(targetFile, undefined, jsonIndent));
     });
 }
 

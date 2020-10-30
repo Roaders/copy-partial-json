@@ -4,6 +4,7 @@ export interface ICopyPartialJsonArgs {
     sourceFile: string;
     targetFile: string[];
     keys: string[];
+    jsonIndent: number;
     help: boolean;
 }
 
@@ -16,6 +17,12 @@ export const usageGuideInfo: UsageGuideConfig<ICopyPartialJsonArgs> = {
             alias: 'k',
             multiple: true,
             description: `The keys to copy. For example, 'version,name,dependencies'`,
+        },
+        jsonIndent: {
+            type: Number,
+            defaultValue: 4,
+            alias: 'i',
+            description: 'The number of spaces to indent your json file by. Defaults to 4.',
         },
         help: { type: Boolean, alias: 'h', description: 'Show this help text' },
     },

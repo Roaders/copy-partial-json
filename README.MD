@@ -19,7 +19,7 @@ Using npm scripts this can be done automatically when `npm version` is run:
 ```json
 {
     "scripts": {
-        "version": "copy-partial-json -s package.json -t childOne/package.json -k version,name,dependencies && git add childOne/package.json"
+        "version": "copy-partial-json -s package.json -t childOne/package.json -k version name dependencies && git add childOne/package.json"
     }
 }
 ```
@@ -33,6 +33,7 @@ Using npm scripts this can be done automatically when `npm version` is run:
 | **sourceFile** | **s** | string | The json file to copy from |
 | **targetFile** | **t** | string[] | The json file to copy to |
 | **keys** | **k** | string[] | The keys to copy. For example, 'version,name,dependencies' |
+| **jsonIndent** | **i** | number | The number of spaces to indent your json file by. Defaults to 4. |
 | **help** | **h** | boolean | Show this help text |
 
 [//]: ####ts-command-line-args_write-markdown_replaceAbove  

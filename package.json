@@ -1,6 +1,6 @@
 {
     "name": "copy-partial-json",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A simple script to copy portions of a json document from one file to another",
     "bin": {
         "copy-partial-json": "dist/index.js"

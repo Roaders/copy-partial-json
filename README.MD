@@ -8,8 +8,6 @@
 ![Typescript](https://img.shields.io/badge/types-TypeScript-blue)
 [![codecov](https://codecov.io/gh/Roaders/copy-partial-json/branch/master/graph/badge.svg?token=06AMYJTIUK)](https://codecov.io/gh/Roaders/copy-partial-json/)
 
-## WORK IN PROGRESS
-
 To copy the version, name and dependency list from a root package.json to child packages:
 
 ```bash

@@ -13,7 +13,7 @@
 To copy the version, name and dependency list from a root package.json to child packages:
 
 ```bash
-$ copy-partial-json -s package.json -t childOne/package.json -t childTwo/package.json -k version,name,dependencies
+$ copy-partial-json -s package.json -t one/package.json -t two/package.json -k version,name,dependencies
 ```
 
 Using npm scripts this can be done automatically when `npm version` is run:
@@ -21,7 +21,7 @@ Using npm scripts this can be done automatically when `npm version` is run:
 ```json
 {
     "scripts": {
-        "version": "copy-partial-json -s package.json -t childOne/package.json -t childTwo/package.json -k version,name,dependencies"
+        "version": "copy-partial-json -s package.json -t childOne/package.json -k version,name,dependencies && git add childOne/package.json"
     }
 }
 ```

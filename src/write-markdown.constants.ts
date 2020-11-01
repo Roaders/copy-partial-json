@@ -29,5 +29,16 @@ export const usageGuideInfo: UsageGuideConfig<ICopyPartialJsonArgs> = {
     parseOptions: {
         helpArg: 'help',
         baseCommand: 'copy-partial-json',
+        headerContentSections: [
+            {
+                header: `copy-partial-json`,
+                includeIn: `cli`,
+                content: `A simple script to copy portions of a json document from one file to another.
+
+To copy the version and dependency list from a root package.json to another packages:
+
+{code.bash $ copy-partial-json -s package.json -t one/package.json -k version name dependencies}`,
+            },
+        ],
     },
 };

@@ -7,7 +7,7 @@ import { usageGuideInfo } from './write-markdown.constants';
 function copyPartialJson() {
     const args = parse(usageGuideInfo.arguments, usageGuideInfo.parseOptions);
 
-    copyPartial(args.sourceFile, args.targetFile, args.keys, args.jsonIndent);
+    copyPartial(args.sourceFile, args.targetFile, args.keys, args.jsonIndent, args.gitAdd);
 }
 
 copyPartialJson();

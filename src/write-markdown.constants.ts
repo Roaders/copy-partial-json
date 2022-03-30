@@ -5,6 +5,7 @@ export interface ICopyPartialJsonArgs {
     targetFile: string[];
     keys: string[];
     jsonIndent: number;
+    gitAdd: boolean;
     help: boolean;
 }
 
@@ -32,6 +33,7 @@ export const usageGuideInfo: UsageGuideConfig<ICopyPartialJsonArgs> = {
             alias: 'i',
             description: 'The number of spaces to indent your json file by. Defaults to 4.',
         },
+        gitAdd: { type: Boolean, alias: 'g', description: 'adds any target files to git after updating' },
         help: { type: Boolean, alias: 'h', description: 'Show this help text' },
     },
     parseOptions: {

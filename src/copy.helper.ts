@@ -1,6 +1,13 @@
 import { readFileSync, writeFileSync } from 'fs';
+import { execSync } from 'child_process';
 
-export function copyPartial(sourcePath: string, targetPaths: string[], keys: string[], jsonIndent: number): void {
+export function copyPartial(
+    sourcePath: string,
+    targetPaths: string[],
+    keys: string[],
+    jsonIndent: number,
+    gitAdd: boolean,
+): void {
     const source = loadJson(sourcePath, true);
 
     targetPaths.forEach((path) => {
@@ -12,6 +19,10 @@ export function copyPartial(sourcePath: string, targetPaths: string[], keys: str
 
         writeFileSync(path, JSON.stringify(targetFile, undefined, jsonIndent));
     });
+
+    if (gitAdd) {
+        execSync(`git add ${targetPaths.join(' ')}`);
+    }
 }
 
 function loadJson(path: string, throwError = false) {

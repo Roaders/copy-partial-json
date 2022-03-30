@@ -18,7 +18,7 @@ Using npm scripts this can be done automatically when `npm version` is run:
 ```json
 {
     "scripts": {
-        "version": "copy-partial-json -s package.json -t childOne/package.json -k version name dependencies && git add childOne/package.json"
+        "version": "copy-partial-json -g -t childOne/package.json -k version"
     }
 }
 ```

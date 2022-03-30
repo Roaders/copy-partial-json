@@ -28,7 +28,8 @@
         "verify-markdown": "write-markdown -f package.json -p markdownConfig -v",
         "preversion": "npm run build-release",
         "version": "node dist -s package.json -t sampleTarget.json -k version name && git add sampleTarget.json",
-        "lint:fix": "eslint . --ext .ts,.d.ts,.js --fix"
+        "lint:fix": "eslint . --ext .ts,.d.ts,.js --fix",
+        "prepublishOnly": "npm run build-release"
     },
     "repository": {
         "type": "git",

@@ -33,6 +33,7 @@ Using npm scripts this can be done automatically when `npm version` is run:
 | **targetFile** | **t** | string[] | The json file to copy to |
 | **keys** | **k** | string[] | The keys to copy. For example, 'version,name,dependencies' |
 | **jsonIndent** | **i** | number | The number of spaces to indent your json file by. Defaults to 4. |
+| **gitAdd** | **g** | boolean | adds any target files to git after updating |
 | **help** | **h** | boolean | Show this help text |
 
 [//]: ####ts-command-line-args_write-markdown_replaceAbove  

@@ -8,9 +8,17 @@ export interface ICopyPartialJsonArgs {
     help: boolean;
 }
 
+const defaultSource = `package.json`;
+
 export const usageGuideInfo: UsageGuideConfig<ICopyPartialJsonArgs> = {
     arguments: {
-        sourceFile: { type: String, alias: 's', description: 'The json file to copy from' },
+        sourceFile: {
+            type: String,
+            alias: 's',
+            description: `The json file to copy from. Defaults to '${defaultSource}'`,
+            defaultValue: defaultSource,
+            defaultOption: true,
+        },
         targetFile: { type: String, multiple: true, alias: 't', description: 'The json file to copy to' },
         keys: {
             type: String,

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import * as fsImport from 'fs';
 import { IMocked, Mock, setupFunction, registerMock, reset, any } from '@morgan-stanley/ts-mocking-bird';

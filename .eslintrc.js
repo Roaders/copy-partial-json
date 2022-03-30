@@ -1,14 +1,13 @@
 module.exports = {
     env: {
+        browser: true,
         node: true,
-        jest: true,
     },
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'prettier',
-        'prettier/@typescript-eslint',
         'plugin:prettier/recommended',
     ],
     parser: '@typescript-eslint/parser',
@@ -17,11 +16,26 @@ module.exports = {
         sourceType: 'module',
     },
     plugins: ['@typescript-eslint'],
+    ignorePatterns: ['dist/', 'coverage/'],
     rules: {
-        indent: ['error', 4, { SwitchCase: 1 }],
-        semi: ['error', 'always'],
-        '@typescript-eslint/no-explicit-any': 'off',
-        'prettier/prettier': ['error', { endOfLine: 'auto' }],
+        'prettier/prettier': [
+            'error',
+            {
+                endOfLine: 'auto',
+                tabWidth: 4,
+                singleQuote: true,
+                printWidth: 120,
+                trailingComma: 'all',
+            },
+        ],
+        '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     },
-    ignorePatterns: ['dist/'],
+    overrides: [
+        {
+            files: ['*.js'],
+            rules: {
+                '@typescript-eslint/no-var-requires': 'off',
+            },
+        },
+    ],
 };
